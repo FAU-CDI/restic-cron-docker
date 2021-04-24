@@ -1,8 +1,8 @@
-# docker-restic
+# restic-cron-docker
 
-[![Publish Docker Image](https://github.com/tkw1536/restrict-cron-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/tkw1536/restrict-cron-docker/actions/workflows/docker.yml)
+[![Publish Docker Image](https://github.com/tkw1536/restic-cron-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/tkw1536/restrict-cron-docker/actions/workflows/docker.yml)
 
-Restic is a fantastic backup tool. To wrap this in a usefull and flexible docker container there is this repo.
+Restic is a fantastic backup tool. To wrap this in a useful and flexible docker container there is this repo.
 
 Includes:
 
