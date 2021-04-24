@@ -17,14 +17,14 @@ Includes:
 You can run restic command very like this:
 
 ```bash
-docker pull ghcr.io/tkw1536/restic-backup:latest
+docker pull ghcr.io/tkw1536/restic-cron:latest
 ```
 
 ```bash
 docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
                 -e AWS_ACCESS_KEY_ID="keyid" \
                 -e AWS_SECRET_ACCESS_KEY="topsecret" \
-                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-backup:latest \
+                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-cron:latest \
                 -v /:/data
                 restic snapshots
 ```
@@ -42,7 +42,7 @@ version: '2'
 services:
   restic:
     restart: always
-    image: ghcr.io/tkw1536/restic-backup:latest
+    image: ghcr.io/tkw1536/restic-cron:latest
     hostname: backup
     domainname: domain.com
     container_name: restic
@@ -72,7 +72,7 @@ version: '2'
 services:
   restic:
     restart: always
-    image: ghcr.io/tkw1536/restic-backup:latest
+    image: ghcr.io/tkw1536/restic-cron:latest
     hostname: backup
     domainname: domain.com
     container_name: restic
@@ -98,7 +98,7 @@ version: '2'
 services:
   restic:
     restart: always
-    image: ghcr.io/tkw1536/restic-backup:latest
+    image: ghcr.io/tkw1536/restic-cron:latest
     hostname: backup
     domainname: domain.com
     container_name: restic
@@ -135,7 +135,7 @@ A full explanation of the commands and options you can refer to the [manual](htt
 docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
                 -e AWS_ACCESS_KEY_ID="keyid" \
                 -e AWS_SECRET_ACCESS_KEY="topsecret" \
-                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-backup \
+                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-cron \
                 -v /:/data
                 restic init
 ```
@@ -147,7 +147,7 @@ docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
 docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
                 -e AWS_ACCESS_KEY_ID="keyid" \
                 -e AWS_SECRET_ACCESS_KEY="topsecret" \
-                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-backup \
+                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-cron \
                 -v /:/data
                 restic snapshots
 ```
@@ -160,7 +160,7 @@ docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
 docker run --rm -e RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/some-repo" \
                 -e AWS_ACCESS_KEY_ID="keyid" \
                 -e AWS_SECRET_ACCESS_KEY="topsecret" \
-                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-backup \
+                -e RESTIC_PASSWORD="some_good_hash" ghcr.io/tkw1536/restic-cron \
                 -v /:/data
                 restic restore _id_ --target /data/restore_location
 ```
