@@ -39,7 +39,7 @@ COPY --from=0 /go/bin/restic /go/bin/restic
 ADD ./target/start_cron.sh /go/bin
 ADD ./target/supervisor_restic.ini /etc/supervisor.d/restic.ini
 
-RUN apk add --no-cache ca-certificates fuse gnupg openssh supervisor && \
+RUN apk add --no-cache ca-certificates fuse gnupg openssh-client supervisor && \
     chmod +x /go/bin/start_cron.sh && \
     mkdir -p /var/log/supervisor
 
