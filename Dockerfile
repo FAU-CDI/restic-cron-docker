@@ -37,6 +37,8 @@ ENV CRON_CLEANUP_EXPRESSION="15  0  0   *   *"
 # Script and config
 COPY --from=0 /go/bin/restic /go/bin/restic
 ADD ./target/start_cron.sh /go/bin
+ADD ./target/run_backup.sh /go/bin
+ADD ./target/run_cleanup.sh /go/bin
 ADD ./target/supervisor_restic.ini /etc/supervisor.d/restic.ini
 
 RUN apk add --no-cache ca-certificates fuse gnupg openssh-client supervisor && \
